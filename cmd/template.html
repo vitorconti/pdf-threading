@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+        }
+        h1, h2 {
+            text-align: center;
+        }
+        .airport {
+            margin-bottom: 20px;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+        }
+        .airport h3 {
+            margin: 0;
+            padding: 0;
+            font-size: 1.2em;
+        }
+        .details {
+            margin-top: 10px;
+        }
+        .details p {
+            margin: 5px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="airports">
+        <div class="airport">
+            <h3>{{.Airport_name}} ({{.Airport_code}})</h3>
+            <div class="details">
+                <p><strong>Date</strong> {{.Time_label}}</p>
+                <p><strong>Delays (Late):</strong> {{.Delay_late}}</p>
+                <p><strong>Delays (Security):</strong> {{.Delay_security}}</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
