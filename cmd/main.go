@@ -33,7 +33,7 @@ func main() {
 
 		wg.Add(1)
 		go func(airline seed.AirlineDelay) {
-			defer wg.Done() // Ensure Done is called even if there's an error
+			defer wg.Done()
 
 			var buf bytes.Buffer
 			if err := tmpl.Execute(&buf, airline); err != nil {
@@ -59,9 +59,8 @@ func main() {
 				return
 			}
 
-			log.Println("PDF generated successfully for airline ID:", airline.Id)
 		}(airline)
 	}
 
-	wg.Wait() // Wait for all goroutines to finish
+	wg.Wait()
 }
