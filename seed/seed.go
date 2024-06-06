@@ -97,7 +97,7 @@ func insertAirline(sqlInsertString string, db *sql.DB) {
 func RetriveAirlineDelays() (*sql.Rows, error) {
 	sqliteDatabase, _ := sql.Open("sqlite3", "./sqlite-database.db")
 	defer sqliteDatabase.Close()
-	selectStatement := "SELECT * FROM airline_delay LIMIT 100"
+	selectStatement := "SELECT * FROM airline_delay LIMIT 200"
 	rs, err := sqliteDatabase.Query(selectStatement)
 	if err != nil {
 		return nil, err
